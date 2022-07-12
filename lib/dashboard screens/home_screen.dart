@@ -4,8 +4,6 @@ import 'package:school_teacher_app/screens/attendence.dart';
 import 'package:school_teacher_app/screens/homework_screen.dart';
 import 'package:school_teacher_app/screens/send_notice_screen.dart';
 import 'package:school_teacher_app/screens/student_fees_screen.dart';
-import 'package:school_teacher_app/screens/student_leave.dart';
-import 'package:school_teacher_app/screens/student_list.dart';
 import 'package:school_teacher_app/screens/timetable_screen.dart';
 
 class ActivityList {
@@ -80,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
               'assets/images/schoolup_logo.png',
@@ -154,7 +152,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-            Container(
+            SizedBox(
               height: MediaQuery.of(context).size.height * 0.74,
               child: SingleChildScrollView(
                 child: Column(
@@ -261,7 +259,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   Navigator.of(context).push(
                                     MaterialPageRoute(
                                       builder: (context) =>
-                                          const StudentFeesScreen(),
+                                          const SendNoticeScreen(),
                                     ),
                                   );
                                 },

@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:school_teacher_app/dashboard%20screens/home_screen.dart';
-import 'package:school_teacher_app/screens/dashboard.dart';
-import 'package:school_teacher_app/screens/login_screen.dart';
 import 'package:school_teacher_app/screens/splash_screen.dart';
-import 'package:school_teacher_app/testing.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,7 +25,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Poppins',
         primarySwatch: Colors.blue,
       ),
-      home: SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }

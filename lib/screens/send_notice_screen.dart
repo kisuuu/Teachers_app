@@ -22,7 +22,7 @@ class _SendNoticeScreenState extends State<SendNoticeScreen> {
   List<Student> sendNoticeLists = allStudent;
   final allSendNoticeLists =
       Student(isSelected: false, isNso: false, title: 'Select All');
-  String _selectedCountry = "";
+  final String _selectedCountry = "";
   var country = {
     '': '',
     'I st': 'IN',
@@ -32,7 +32,7 @@ class _SendNoticeScreenState extends State<SendNoticeScreen> {
     'V th': 'BD',
   };
 
-  List _countries = [];
+  final List _countries = [];
   CountryDependentDropDown() {
     country.forEach((key, value) {
       _countries.add(key);
@@ -48,7 +48,7 @@ class _SendNoticeScreenState extends State<SendNoticeScreen> {
     'Janakpur': 'NP'
   };
 
-  List _states = [];
+  final List _states = [];
   StateDependentDropDown(countryShortName) {
     state.forEach((key, value) {
       if (countryShortName == value) {
@@ -71,7 +71,7 @@ class _SendNoticeScreenState extends State<SendNoticeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Send Notice",
           style: TextStyle(
             fontSize: 15,
@@ -94,7 +94,7 @@ class _SendNoticeScreenState extends State<SendNoticeScreen> {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back_ios_new,
             size: 20,
           ),
@@ -110,7 +110,7 @@ class _SendNoticeScreenState extends State<SendNoticeScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-                SizedBox(
+                const SizedBox(
                   height: 23,
                 ),
                 // Align(
@@ -186,13 +186,13 @@ class _SendNoticeScreenState extends State<SendNoticeScreen> {
                 //     }).toList(),
                 //   ),
                 // ),
-                SizedBox(
+                const SizedBox(
                   height: 13,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       "Notice Title",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -207,11 +207,11 @@ class _SendNoticeScreenState extends State<SendNoticeScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           TextFormField(
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               isDense: true, // Added this
                               // contentPadding: EdgeInsets.all(8), // Added this
                             ),
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 16.0,
                               // height: 1.0,
                               // color: Colors.black,
@@ -224,10 +224,10 @@ class _SendNoticeScreenState extends State<SendNoticeScreen> {
                               return null;
                             },
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 13,
                           ),
-                          Text(
+                          const Text(
                             "Notice Discription",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
@@ -236,12 +236,12 @@ class _SendNoticeScreenState extends State<SendNoticeScreen> {
                             ),
                           ),
                           TextFormField(
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               isDense: true, // Added this
                               // contentPadding: EdgeInsets.all(8), // Added this
                             ),
                             keyboardType: TextInputType.multiline,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 16.0,
                               // height: 1.0,
                               // color: Colors.black,
@@ -260,7 +260,7 @@ class _SendNoticeScreenState extends State<SendNoticeScreen> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 13,
                 ),
                 Container(
@@ -268,7 +268,8 @@ class _SendNoticeScreenState extends State<SendNoticeScreen> {
                       border: Border.all(
                         color: borderColor,
                       ),
-                      borderRadius: BorderRadius.all(Radius.circular(20))),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(20))),
                   child: Column(
                     children: [
                       Container(
@@ -312,12 +313,12 @@ class _SendNoticeScreenState extends State<SendNoticeScreen> {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 13,
                 ),
                 Column(
                   children: [
-                    Align(
+                    const Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         "Attach File",
@@ -343,13 +344,13 @@ class _SendNoticeScreenState extends State<SendNoticeScreen> {
 
                         print('From ${file.path}');
                       },
-                      child: Text(
+                      child: const Text(
                         'Pick File',
                       ),
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 13,
                 ),
                 SizedBox(
@@ -368,12 +369,12 @@ class _SendNoticeScreenState extends State<SendNoticeScreen> {
                       showDialog(
                           context: context,
                           builder: (BuildContext context) {
-                            return AdvanceCustomAlert();
+                            return const AdvanceCustomAlert();
                           });
                     },
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 13,
                 ),
               ],
@@ -505,15 +506,15 @@ class AdvanceCustomAlert extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(10, 70, 10, 10),
                 child: Column(
                   children: [
-                    Text(
+                    const Text(
                       'Sucess',
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
-                    Text(
+                    const Text(
                       'You have succesfully posted a Notice to all students',
                       textAlign: TextAlign.center,
                       style: TextStyle(
@@ -523,20 +524,20 @@ class AdvanceCustomAlert extends StatelessWidget {
                       ),
                     ),
                     // SizedBox(
-                    Spacer(),
+                    const Spacer(),
                     //   height: 20,
                     // ),
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          primary: Color.fromARGB(255, 19, 195, 156),
+                          primary: const Color.fromARGB(255, 19, 195, 156),
                           // color: Color.fromARGB(255, 19, 195, 156),
                         ),
                         onPressed: () {
                           Navigator.of(context).pop();
                         },
-                        child: Text(
+                        child: const Text(
                           'Done',
                           style: TextStyle(
                             color: Colors.white,
@@ -548,7 +549,7 @@ class AdvanceCustomAlert extends StatelessWidget {
                 ),
               ),
             ),
-            Positioned(
+            const Positioned(
               top: -60,
               child: CircleAvatar(
                 backgroundColor: Color.fromARGB(255, 19, 195, 156),
